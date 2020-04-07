@@ -22,8 +22,10 @@ cryptoRouter.get('/get-all', async (req, res) => {
 
          let fullDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + 1) + " " + date.getHours() + ":" + date.getMinutes()
 
+         let newDate = new Date(val.createdAt)
+         newDate.setHours(newDate.getHours() + 2)
 
-         var result = roundToNearestMinutes(new Date(val.createdAt))
+         var result = roundToNearestMinutes(newDate)
 
          let cryptoObject = {
             luno: parseInt(val.luno.price),
@@ -54,7 +56,10 @@ cryptoRouter.get('/get-latest', async (req, res) => {
 
       const cryptos = query.map((val) => {
          
-         var result = roundToNearestMinutes(new Date(val.createdAt))
+         let newDate = new Date(val.createdAt)
+         newDate.setHours(newDate.getHours() + 2)
+
+         var result = roundToNearestMinutes(newDate)
 
          let cryptoObject = {
             luno: parseInt(val.luno.price),
@@ -86,7 +91,10 @@ cryptoRouter.get('/last-24-hours', async (req, res) => {
       let krakenPercDiff = 0
       let bitstampPercDiff = 0
 
-      var result = roundToNearestMinutes(new Date(val.createdAt))
+      let newDate = new Date(val.createdAt)
+      newDate.setHours(newDate.getHours() + 2)
+
+      var result = roundToNearestMinutes(newDate)
 
       let dateT = result.toISOString().replace(/T/, ' ').replace(/\..+/, '').slice(0, 16)
 
@@ -125,7 +133,10 @@ cryptoRouter.get('/export-all', async (req, res) => {
       let krakenPercDiff = 0
       let bitstampPercDiff = 0
 
-      var result = roundToNearestMinutes(new Date(val.createdAt))
+      let newDate = new Date(val.createdAt)
+      newDate.setHours(newDate.getHours() + 2)
+
+      var result = roundToNearestMinutes(newDate)
 
       let dateT = result.toISOString().replace(/T/, ' ').replace(/\..+/, '').slice(0, 16)
 
