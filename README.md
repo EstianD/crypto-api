@@ -1,8 +1,10 @@
 ## Project Description
 
-This is a cronjob written in Node.js to get data for a crypto dashboard I wrote. The purpose of this cron is to get the price value of Bitcoin and Ethereum from the 3 different exchanges. Kraken, Bitstamp and Luno. This cron was written for the following project repos:<br/>
+This is the backend API for the Crypto-Dashboard I wrote. The purpose of the API it to get data retrieved from the cronjobs. The Dashboard repo linked below is the frontend for this project
+<br/>
 [crypto-dashboard](https://github.com/EstianD/crypto-dashboard)<br/>
-[crypto-api](https://github.com/EstianD/crypto-api)<br/> [exchangeCron](https://github.com/EstianD/nodejs-exchange-cron)<br/>
+[cryptoCron](https://github.com/EstianD/crypto-cron-no-express)<br/>
+[exchangeCron](https://github.com/EstianD/exchange-cron-no-express)<br/>
 This cron uses PM2 process manager to run every 5 minutes.
 
 ## Running the App
@@ -16,10 +18,7 @@ Installs dependancies for app.
 For the cron to run you need to add a .env file with the following configurations.
 
 MONGODB_URI=mongodb://localhost:27017/crypto-db
-
-KRAKENBTCEURLINK=https://api.cryptowat.ch/markets/kraken/btceur/price
-BITSTAMPBTCUSDLINK=https://api.cryptowat.ch/markets/bitstamp/btcusd/price
-LUNOBTCZARLINK=https://api.mybitx.com/api/1/ticker?pair=XBTZAR
+PORT=4000
 
 ## Scripts
 
