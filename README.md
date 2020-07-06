@@ -5,7 +5,6 @@ This is the backend API for the Crypto-Dashboard I wrote. The purpose of the API
 [crypto-dashboard](https://github.com/EstianD/crypto-dashboard)<br/>
 [cryptoCron](https://github.com/EstianD/crypto-cron-no-express)<br/>
 [exchangeCron](https://github.com/EstianD/exchange-cron-no-express)<br/>
-This cron uses PM2 process manager to run every 5 minutes.
 
 ## Running the App
 
